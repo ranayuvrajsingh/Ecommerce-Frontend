@@ -1,0 +1,85 @@
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.home {
+  padding: 2rem 5%;
+  display: flex;
+
+  flex-direction: column;
+  height: calc(100vh - 4rem);
+  width: 100%;
+  > section {
+    height: 18.75rem;
+    width: 100%;
+    margin: auto;
+  }
+
+  > h1 {
+    @include heading(1px);
+    margin-top: 3rem;
+    @include flex(row, space-between, center);
+  }
+  .findmore {
+    font-size: 1rem;
+  }
+
+  > main {
+    width: 100%;
+    // height: auto;
+    flex: 1;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    // overflow-x: auto;
+    &::webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+.product-card {
+  width: 18.75rem;
+  height: 25rem;
+  padding: 1rem;
+  position: relative;
+  background-color: #fff;
+  flex: none;
+  @include flex(column, flex-start, center, 4px);
+  img {
+    @include square(calc(20.75rem - 4rem));
+    object-fit: contain;
+    margin: 1rem;
+  }
+  span {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  > div {
+    opacity: 0;
+    position: absolute;
+    @include square(100%);
+    top: 0;
+    left: 0;
+    background-color: #1615159f;
+    @include flex();
+    button {
+      @include flex;
+      @include square(3rem);
+      border-radius: 100%;
+      border: none;
+      background-color: $color3;
+      cursor: pointer;
+      color: $color1;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+
+      &:hover {
+        rotate: 360deg;
+      }
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
